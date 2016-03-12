@@ -1,0 +1,17 @@
+%PS
+/s 20 string def
+nums {
+  /n exch def
+  n s cvs print
+  ( closest factors: ) print
+  1 n sqrt cvi add -1 1 {
+    /i exch def
+    0 n i mod eq {
+      i s cvs print
+      ( x ) print
+      n i div cvi s cvs print
+      exit
+    } if
+  } for
+  (\n) print
+} forall

@@ -23,3 +23,8 @@ out.sh: close-fact.sh Makefile out.awk
 	@./close-fact.sh 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 25 144 145 \
 	  > out.sh
 	@cmp out.sh out.awk
+
+out.ps: close-fact.ps Makefile out.awk
+	@gs-noX11 -dNOPROMPT -q -c '/nums [ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 25 144 145 ] def' close-fact.ps \
+	  > out.ps
+	@cmp out.ps out.awk
