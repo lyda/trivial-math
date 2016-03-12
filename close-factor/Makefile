@@ -1,5 +1,5 @@
 .PHONY: all
-all: out.awk out.go out.pl out.sh
+all: out.awk out.go out.pl out.sh out.ps
 
 .PHONY: clean
 clean:
