@@ -25,6 +25,9 @@ out.sh: close-fact.sh Makefile out.awk
 	@cmp out.sh out.awk
 
 out.ps: close-fact.ps Makefile out.awk
-	@gs-noX11 -dNOPROMPT -q -c '/nums [ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 25 144 145 ] def' close-fact.ps \
+	@gs=$$(type gs > /dev/null 2>&1 && echo gs || echo gs-noX11); \
+	  $$gs -dNOPROMPT -q -c \
+	  '/nums [ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 25 144 145 ] def' \
+	  < close-fact.ps \
 	  > out.ps
 	@cmp out.ps out.awk
